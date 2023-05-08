@@ -28,8 +28,8 @@ export default function Page() {
                 <div className="w-2/3 lg:w-1/2">
                     <h1 className="text-center text-5xl font-bold" data-aos="fade-up"> LATAR BELAKANG </h1>
                     <div className="chat chat-start">
-                        <div className="chat-bubble" data-aos="zoom-in-right"> Dunia kini telah memasuki abad 21, sebuah abad yang relevan dengan Revolusi Industri 4.0 dan era "Disrupsi", dimana inovasi dan ide menjadi pondasi dan ide menjadi pondasi atau dasar perkembangan masyarakat itu sendiri. </div>
-                        <div className="chat-bubble" data-aos="zoom-in-right"> Indonesia sebagai negara yang memiliki populasi terbesar ke-4 di dunia tentunya dihadapkan dengan problematika yang sama di era yang penuh akan "ketidakpastian" ini. </div>
+                        <div className="chat-bubble" data-aos="zoom-in-right"> Dunia kini telah memasuki abad 21, sebuah abad yang relevan dengan Revolusi Industri 4.0 dan era &ldquo;Disrupsi&rdquo;, dimana inovasi dan ide menjadi pondasi dan ide menjadi pondasi atau dasar perkembangan masyarakat itu sendiri. </div>
+                        <div className="chat-bubble" data-aos="zoom-in-right"> Indonesia sebagai negara yang memiliki populasi terbesar ke-4 di dunia tentunya dihadapkan dengan problematika yang sama di era yang penuh akan &ldquo;ketidakpastian&rdquo; ini. </div>
                         <div className="chat-bubble" data-aos="zoom-in-right"> Kolaborasi menjadi jawaban dan kunci tersendiri dalam menghadapi era disrupsi yang semakin tidak pasti ini. Oleh karena itu, diperlukan sebuah wadah untuk bersama-sama membangun talenta Indonesia dalam sebuah rantai kolaborasi. </div>
                     </div>
                     <div className="chat chat-end">
