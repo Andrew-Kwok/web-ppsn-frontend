@@ -1,14 +1,29 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <div> 
+    <div className="scroll-smooth" style={{scrollBehavior: "smooth"}}> 
       <Navbar title="My Next.js App" />
-      {/* <h1> Hello, World </h1> */}
+      <div className="hero min-h-screen bg-base-200">
+        <div className="hero-content max-w-[75rem] flex-col lg:flex-row">
+          <img src="/logo-ppsn.png" className="max-w-sm rounded-lg shadow-2xl" />
+          <div>
+            <h1 className="text-4xl font-bold"> Perhimpunan Pelajar Sains Nasional (PPSN) </h1>
+            <p className="py-6 text-xl text-justify"> Organisasi yang menjadi wadah kepada seluruh talenta sains Indonesia yang bertujuan untuk mengembangkan aspek sosial, akademik serta nasionalisme dan persatuan kepada saintis muda di Republik Indonesia </p>
+            <a href="#kenali-kami"> <button className="btn btn-primary"> Kenali Kami </button> </a>
+          </div>
+        </div>
+      </div>
+      
+      <div id="kenali-kami" className="min-h-screen flex flex-col justify-center items-center ">
+      </div>
+
+      <Footer />
     </div>
   )
 

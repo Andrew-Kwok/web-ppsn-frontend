@@ -25,3 +25,35 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@layer components {
+  .hero-content {
+      @apply max-w-none w-full;
+  }
+
+  /* Contact List: For Social Media Logos in Footer */
+  .contact-list {
+      @apply mt-5;
+  }
+
+  .contact-list-icon {
+      @apply text-4xl mr-3 inline-block hover:scale-125 transition-all duration-300 ease-in-out;
+  }
+  
+  .contact-list-text {
+      @apply text-3xl inline-block relative hover:text-orange transition-all duration-300 ease-in-out;
+  }
+
+  .contact-list-text:after {
+      content: '';
+      @apply absolute w-full scale-x-0 h-0.5 bottom-0 left-0 bg-orange origin-bottom-right transition-transform duration-300 ease-out;
+  }
+
+  .contact-list-text:hover:after {
+      @apply scale-x-100 origin-bottom-left;
+  }
+
+  .chat-bubble {
+      @apply mt-6 w-2/3 text-xl bg-cyan-200 text-black text-justify;
+  }
+}   
