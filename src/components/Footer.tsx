@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Footer = ({}) => {
     return (
-        <div className="footer p-10 bg-gray-300 text-base-content">
+        <div className="footer p-10 bg-gray-300 text-black">
             <div>
                 <Link href="/" style={{ maxHeight: '15vh', maxWidth: '100%', overflow: 'hidden' }}>             
                     <Image className="ml-5"

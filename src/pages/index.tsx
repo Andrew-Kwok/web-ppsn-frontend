@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="scroll-smooth" style={{scrollBehavior: "smooth"}}> 
       <Navbar title="My Next.js App" />
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero min-h-screen bg-gray-200">
         <div className="hero-content max-w-[75rem] flex-col lg:flex-row">
           <img src="/logo-ppsn.png" className="max-w-sm rounded-lg shadow-2xl" />
           <div>
