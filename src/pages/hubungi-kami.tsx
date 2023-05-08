@@ -1,7 +1,10 @@
+import UnderConstruction from "@components/components/UnderConstruction";
+
 export default function Page() {
     return (
         <div>
-            Contact Us Page.
+            <UnderConstruction />
+            {/* Contact Us Page. */}
         </div>
     )
 }

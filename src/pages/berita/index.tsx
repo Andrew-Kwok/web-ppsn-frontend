@@ -1,5 +1,8 @@
+import UnderConstruction from "@components/components/UnderConstruction";
+
 export default function Page() {
     return (
-        <div> Kumpulan Berita </div>
+        <UnderConstruction />
+        // <div> Kumpulan Berita </div>
     )
 }
