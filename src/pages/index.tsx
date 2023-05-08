@@ -17,7 +17,7 @@ export default function Home() {
         </div>
       </div>
       
-      <div id="kenali-kami" className="min-h-screen flex flex-col justify-center items-center ">
+      <div id="kenali-kami" className="min-h-screen flex flex-col justify-center items-center">
       </div>
     </div>
   )
