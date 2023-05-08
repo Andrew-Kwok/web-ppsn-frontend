@@ -1,11 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image'
 
-interface NavbarProps {
-  title: string;
-}
-
-const Navbar = ({ title }: NavbarProps) => {
+const Navbar = ({}) => {
   return (
     <div className="navbar bg-base-100 sticky top-0 z-10" data-theme="dark">
         <div className="flex-1">

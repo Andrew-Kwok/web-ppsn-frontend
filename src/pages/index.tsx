@@ -1,14 +1,11 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
     <div> 
-      <Navbar title="My Next.js App" />
       <div className="hero min-h-screen bg-gray-200">
         <div className="hero-content max-w-[75rem] flex-col lg:flex-row">
           <img src="/logo-ppsn.png" className="max-w-sm rounded-lg shadow-2xl" />
@@ -22,8 +19,6 @@ export default function Home() {
       
       <div id="kenali-kami" className="min-h-screen flex flex-col justify-center items-center ">
       </div>
-
-      <Footer />
     </div>
   )
 
