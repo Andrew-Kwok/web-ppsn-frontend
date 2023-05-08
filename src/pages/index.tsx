@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <div className="scroll-smooth" style={{scrollBehavior: "smooth"}}> 
+    <div> 
       <Navbar title="My Next.js App" />
       <div className="hero min-h-screen bg-gray-200">
         <div className="hero-content max-w-[75rem] flex-col lg:flex-row">
