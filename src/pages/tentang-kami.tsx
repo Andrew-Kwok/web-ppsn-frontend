@@ -25,7 +25,7 @@ export default function Page() {
 
             {/* Latar Belakang */}
             <div id="latar-belakang" className="min-h-screen w-full flex justify-center items-center py-28">
-                <div className="w-2/3 lg:w-1/2">
+                <div className="w-4/5 lg:w-1/2">
                     <h1 className="text-center text-5xl font-bold" data-aos="fade-up"> LATAR BELAKANG </h1>
                     <div className="chat chat-start">
                         <div className="chat-bubble" data-aos="zoom-in-right"> Dunia kini telah memasuki abad 21, sebuah abad yang relevan dengan Revolusi Industri 4.0 dan era &ldquo;Disrupsi&rdquo;, dimana inovasi dan ide menjadi pondasi dan ide menjadi pondasi atau dasar perkembangan masyarakat itu sendiri. </div>
@@ -73,7 +73,7 @@ export default function Page() {
                     <div className="flex flex-col w-full lg:flex-row">
                         <div className="grid flex-grow card bg-gray-300 p-8 rounded-box place-items-center lg:w-1/2" data-aos="fade-up-left"> 
                             <h1 className="text-4xl font-bold"> VISI </h1>
-                            <p> Menghimpun  , membentuk dan mengembangkan talenta sains muda Indonesia dalam berbagai lini untuk memajukan penetraasi Ilmu Pengetahuan dan meningkatkan minat sains generasi muda Republik Indonesia </p>
+                            <p> Menghimpun, membentuk dan mengembangkan talenta sains muda Indonesia dalam berbagai lini untuk memajukan penetraasi Ilmu Pengetahuan dan meningkatkan minat sains generasi muda Republik Indonesia </p>
                         </div> 
                         <div className="divider lg:divider-horizontal"></div> 
                         <div className="grid flex-grow card bg-gray-300 p-8 rounded-box place-items-center lg:w-1/2" data-aos="fade-down-right">

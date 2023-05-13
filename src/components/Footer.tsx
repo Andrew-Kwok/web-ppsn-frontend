@@ -4,7 +4,6 @@ import React from 'react'
 
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Footer = ({}) => {
@@ -20,7 +19,7 @@ const Footer = ({}) => {
                         // TODO: Set max-height as 15vh
                     /> 
                 </Link>
-                <p> 2021-2022 Perhimpunan Pelajar Sains Nasional </p>
+                <p> 2021-2023 Perhimpunan Pelajar Sains Nasional </p>
             </div> 
             <div className="text-xl">
                 <span className="footer-title"> <Link className="link link-hover" href="/tentang-kami"> Tentang Kami </Link> </span>  
