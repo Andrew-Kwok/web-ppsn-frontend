@@ -1,23 +1,29 @@
 import Link from 'next/link'
+import getConfig from "next/config";
 
 import UnderConstruction from "@components/components/UnderConstruction";
 
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import QuestionForm from '@components/components/QuestionForm';
 
 
 export default function Page() {
+    const { publicRuntimeConfig } = getConfig()
+
     return (
         <div>
-            <div className="h-[50vh] bg-gray-200 flex flex-col items-center justify-center text-center">
-                <h1 className="text-5xl lg:text-6xl"> Bagaimana kami dapat membantu? </h1>
-                <h2 className="text-4xl lg:text-5xl mt-4"> Kirimkan kami <Link href="#kirim-pesan" className="link text-black font-bold">pesan</Link> anda! </h2>
-            </div>
+            <div id="kirim-pesan">
+                <div className="h-[45vh] bg-gray-200 flex flex-col items-center justify-center text-center">
+                    <h1 className="text-5xl lg:text-6xl"> Bagaimana kami dapat membantu? </h1>
+                    <h2 className="text-4xl lg:text-5xl mt-4"> Kirimkan kami <Link href="#kirim-pesan" className="link text-black font-bold">pesan</Link> anda! </h2>
+                </div>
 
-            <div id="#kirim-pesan" className="h-fit bg-gray-200 flex flex-col items-center p-8">
-                <QuestionForm />
+                <div className="h-fit bg-gray-200 flex flex-col items-center p-8">
+                    <QuestionForm />
+                </div>
             </div>
 
             <div id="alamat-kontak" className="container flex justify-center items-center mx-auto h-[200vh] lg:h-screen">
@@ -40,34 +46,34 @@ export default function Page() {
                             <div className="absolute left-20">
                                 <ul className="mt-6">
                                     <li className="contact-list">
-                                        <Link href="tel:+62-818-0713-7217" className="contact-list-icon hover:text-color-phone"> 
+                                        <Link href={`tel:${publicRuntimeConfig.PPSN_PHONE}`} className="contact-list-icon hover:text-color-phone"> 
                                             <FontAwesomeIcon icon={faPhone} />
                                         </Link>
-                                        <Link href="tel:+62-818-0713-7217" className="contact-list-text hover:text-color-phone after:bg-color-phone"> 
+                                        <Link href={`tel:${publicRuntimeConfig.PPSN_PHONE}`} className="contact-list-text hover:text-color-phone after:bg-color-phone"> 
                                             +62 818-0713-7217 
                                         </Link>
                                     </li>
                                     <li className="contact-list">
-                                        <Link href="mailto:ppsnasional@gmail.com" className="contact-list-icon hover:text-color-email"> 
+                                        <Link href={`mailto:${publicRuntimeConfig.PPSN_EMAIL}`} className="contact-list-icon hover:text-color-email"> 
                                             <FontAwesomeIcon icon={faEnvelope} /> 
                                         </Link>
-                                        <Link href="mailto:ppsnasional@gmail.com" className="contact-list-text hover:text-color-email after:bg-color-email"> 
+                                        <Link href={`mailto:${publicRuntimeConfig.PPSN_EMAIL}`} className="contact-list-text hover:text-color-email after:bg-color-email"> 
                                             ppsnasional@gmail.com 
                                         </Link>  
                                     </li>
                                     <li className="contact-list">
-                                        <Link href="https://www.instagram.com/ppsn.id/" className="contact-list-icon hover:text-color-ig"> 
+                                        <Link href={publicRuntimeConfig.PPSN_IG} className="contact-list-icon hover:text-color-ig"> 
                                             <FontAwesomeIcon icon={faInstagram} />
                                         </Link>
-                                        <Link href="https://www.instagram.com/ppsn.id/" className="contact-list-text hover:text-color-ig after:bg-color-ig"> 
+                                        <Link href={publicRuntimeConfig.PPSN_IG} className="contact-list-text hover:text-color-ig after:bg-color-ig"> 
                                             @ppsn.id 
                                         </Link>   
                                     </li>
                                     <li className="contact-list">
-                                        <Link href="https://id.linkedin.com/company/perhimpunan-pelajar-sains-nasional" className="contact-list-icon hover:text-color-li"> 
+                                        <Link href={publicRuntimeConfig.PPSN_LI} className="contact-list-icon hover:text-color-li"> 
                                             <FontAwesomeIcon icon={faLinkedin} /> 
                                         </Link>
-                                        <Link href="https://id.linkedin.com/company/perhimpunan-pelajar-sains-nasional" className="contact-list-text hover:text-color-li after:bg-color-li"> 
+                                        <Link href={publicRuntimeConfig.PPSN_LI} className="contact-list-text hover:text-color-li after:bg-color-li"> 
                                             Perhimpunan Pelajar Sains Nasional
                                         </Link>
                                     </li>

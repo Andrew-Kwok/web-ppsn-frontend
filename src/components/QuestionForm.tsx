@@ -1,6 +1,9 @@
 import { use, useState } from "react";
+import getConfig from "next/config";
 
 export default function QuestionForm() {
+    const { publicRuntimeConfig } = getConfig()
+
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [questionText, setQuestionText] = useState('');
@@ -42,7 +45,7 @@ export default function QuestionForm() {
             }
 
             try {
-                const response = await fetch ('http://localhost:8000/api/question', {
+                const response = await fetch (publicRuntimeConfig.API_URL + '/question', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
