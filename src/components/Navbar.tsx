@@ -4,21 +4,11 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react';
 
 export default function Navbar() {
-    const size = getWindowSize();
-
-    if (size.width > 768) {
-        return <DesktopNavbar />
-    } else {
-        return <MobileNavbar />
-    }
-};
-
-function getWindowSize() {
     const [windowSize, setWindowSize] = useState({
-        width: undefined,
-        height: undefined,
+        width: 0,
+        height: 0,
     });
-    
+
     useEffect(() => {
         function handleResize() {
             setWindowSize({
@@ -31,8 +21,13 @@ function getWindowSize() {
         handleResize();
         return () => window.removeEventListener("resize", handleResize);
     }, []);
-    return windowSize;
-}
+
+    if (windowSize.width > 768) {
+        return <DesktopNavbar />
+    } else {
+        return <MobileNavbar />
+    }
+};
      
 function DesktopNavbar() {
     return (

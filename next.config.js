@@ -13,4 +13,7 @@ module.exports = {
     PPSN_IG: 'https://www.instagram.com/ppsn.id/',
     PPSN_LI: 'https://id.linkedin.com/company/perhimpunan-pelajar-sains-nasional',
   },
+  images: {
+    domains: ['localhost', 'images.unsplash.com']
+  },
 }

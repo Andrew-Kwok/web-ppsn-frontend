@@ -1,6 +1,10 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 
+import NewsCollectionLayout from '@components/components/news/NewsCollectionLayout'
+import CarouselAboutUs from '@components/components/about-us/CarouselAboutUs'
+import Contact from '@components/components/contact-us/Contact'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -15,10 +19,11 @@ export default function Home() {
             <a href="#kenali-kami"> <button className="btn btn-primary"> Kenali Kami </button> </a>
           </div>
         </div>
-      </div>
-      
-      <div id="kenali-kami" className="min-h-screen flex flex-col justify-center items-center">
-      </div>
+      </div> 
+
+      <NewsCollectionLayout />
+      <CarouselAboutUs />
+      <Contact />
     </div>
   )
 
