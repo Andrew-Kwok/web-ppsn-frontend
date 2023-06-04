@@ -16,7 +16,7 @@ export default function Carousel() {
     return (
         <div id="kenali-kami" className="min-h-screen flex flex-col justify-center items-center bg-gray-200">
             <h1 className="text-6xl font-bold mb-20"> KENALI KAMI </h1>
-            <div className="carousel w-full">
+            <div className="carousel w-full px-24">
                 <div id="slide1" className="carousel-item relative mx-20">
                 <Card 
                     title="Latar Belakang" 

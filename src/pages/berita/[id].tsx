@@ -1,16 +1,18 @@
-import NewsSingleLayout from "@components/components/news/NewsSingleLayout"
 import React from 'react'
 import { useState, useEffect } from 'react';
 
 import { GetStaticProps, GetStaticPaths } from 'next';
 import ErrorPage from 'next/error';
 
+import { NewsProps } from '@components/components/news/NewsProps'
+import NewsSingleLayout from "@components/components/news/NewsSingleLayout"
+
 interface PageProps {
     id: string;
 }
 
 const Page: React.FC<PageProps> = ({ id }) => {
-    const [data, setData] = useState(null)
+    const [data, setData] = useState<NewsProps | null>(null)
 
     useEffect(() => {
         const fetchData = async() => {
@@ -32,7 +34,15 @@ const Page: React.FC<PageProps> = ({ id }) => {
         return <ErrorPage statusCode={404} />;
     } else {
         return (
-            <NewsSingleLayout news={data} />
+            <NewsSingleLayout
+                id={data.id}
+                headline={data.headline}
+                picture={`http://localhost:8000${data.picture}`}
+                content={data.content}
+                pub_date={data.pub_date}
+                upd_date={data.upd_date}
+                authors={data.authors}
+            />
         )
     }
 };

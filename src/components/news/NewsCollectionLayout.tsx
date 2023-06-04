@@ -1,27 +1,10 @@
-import Image from "next/image";
+// import Image from "next/image";
+// Image doesn't work, will use <img /> as the solution (which is slower)
+import Link from "next/link"
 import { useState, useEffect } from "react"
 
-interface NewsProps {
-    headline: string;
-    picture: string;
-}
-
-function NewsBox(props: NewsProps) {
-    return (
-        <div className="relative h-screen">
-            {/* <h1> {props.picture} </h1> */}
-
-            <Image 
-                fill
-                src='https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=80'
-                alt={props.headline}
-                sizes=" 33vw"
-            />
-            {/* <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-black"></div> */}
-
-        </div>
-    )
-}
+import { NewsProps } from '@components/components/news/NewsProps'
+import NewsBox from '@components/components/news/NewsBox'
 
 export default function Page() {
     const [data, setData] = useState(null)
@@ -32,8 +15,6 @@ export default function Page() {
                 const response = await fetch('http://localhost:8000/api/news/');
                 const jsonData  = await response.json();
                 setData(jsonData);
-
-                console.error(response.status)
             } catch(error) {
                 console.error('Error fetching data: ', error);
             }
@@ -43,28 +24,23 @@ export default function Page() {
     }, [])
 
     return (
-        <div className="h-screen">
-            <h1> Berita Terbaru </h1>
-
-            {data && <ul>
-                {data.map((item) => (
-                    <NewsBox 
-                        headline={item.headline}
-                        picture={'http://localhost:8000' + item.picture}
-                    />
-                ))}
-            </ul> }
-
-            <div className="grid grid-cols-3">
-                <div>
-                    <h1> Test </h1>
+        <div className="h-min flex justify-center m-8">
+            <div className="w-11/12 max-w-7xl bg-white shadow-lg p-4">
+                <h1 className="text-2xl font-bold"> Berita Terbaru </h1>
+                <div className="flex justify-center items-center"> 
+                    {data && <ul className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-4">
+                        {data.map((item) => (
+                            <li className="w-full p-[3%]">
+                                <NewsBox
+                                    id={item.id}
+                                    headline={item.headline}
+                                    picture={`http://localhost:8000${item.picture}`}
+                                />
+                            </li>
+                        ))}
+                    </ul> }
                 </div>
-                <div>
-                    <h1> Test </h1>
-                </div>
-                <div>
-                    <h1> Test </h1>
-                </div>
+                <Link href="/berita"> <p className="text-xl text-right text-orange-800"> Lihat Berita Lebih Lengkap &#62; </p> </Link>
             </div>
         </div>
     )
