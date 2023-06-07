@@ -12,7 +12,7 @@ export default function QuestionForm() {
     const [emailError, setEmailError] = useState('');
     const [questionTextError, setQuestionTextError] = useState('');
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         let isValid = true;

@@ -7,7 +7,7 @@ import { NewsProps } from '@components/components/news/NewsProps'
 import NewsBox from '@components/components/news/NewsBox'
 
 export default function Page() {
-    const [data, setData] = useState(null)
+    const [data, setData] = useState([])
 
     useEffect(() => {
         const fetchData = async() => {
@@ -29,8 +29,8 @@ export default function Page() {
                 <h1 className="text-2xl font-bold"> Berita Terbaru </h1>
                 <div className="flex justify-center items-center"> 
                     {data && <ul className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-4">
-                        {data.map((item) => (
-                            <li className="w-full p-[3%]">
+                        {data.map((item: NewsProps) => (
+                            <li key={item.id} className="w-full p-[3%]">
                                 <NewsBox
                                     id={item.id}
                                     headline={item.headline}

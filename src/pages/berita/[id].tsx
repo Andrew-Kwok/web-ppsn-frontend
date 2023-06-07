@@ -48,7 +48,7 @@ const Page: React.FC<PageProps> = ({ id }) => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const { id } = params;
+    const id = params?.id as string | undefined;
 
     return {
         props: {

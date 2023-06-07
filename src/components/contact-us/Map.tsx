@@ -1,17 +1,24 @@
 import { useEffect, useRef, useMemo } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 
-export default function Map({ lat, lng }) {
-    useEffect(() => {
-        console.log("jancuk");
+/// <reference types="@types/googlemaps" />
 
+export default function Map({ lat, lng }: { lat: number; lng: number }) {
+    useEffect(() => {
         const loader = new Loader({
             apiKey: "AIzaSyBBnjRY9EYgZyNV566bhhYP7OoHUSro4_0",
             version: "weekly",
         });
         
         loader.load().then(() => {
-            const map = new google.maps.Map(document.getElementById('map'), {
+            const element = document.getElementById('map');
+
+            if (element === null) {
+                console.error('Map element not found.');
+                return;
+            } 
+
+            const map = new google.maps.Map(element, {
                 center: { lat, lng },
                 zoom: 8,        
             }); 

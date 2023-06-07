@@ -14,7 +14,7 @@ export default function Page(news: NewsProps) {
                     
             <h1> {news.picture} </h1>
 
-            <img src={news.picture}/>
+            <img src={news.picture} alt={news.headline} />
 
 
             {/* Unable to use builtin next.js image, need to configure later. Check Console for Internal Server Error */}
@@ -25,7 +25,7 @@ export default function Page(news: NewsProps) {
             /> */}
 
             <h2> {news.pub_date} </h2>
-            <p> {news.content} </p>
+            <p dangerouslySetInnerHTML={{__html: news.content}} />
         </div>
     )
 }

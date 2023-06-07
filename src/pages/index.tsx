@@ -12,7 +12,7 @@ export default function Home() {
     <div> 
       <div className="hero min-h-screen bg-gray-200">
         <div className="hero-content max-w-[75rem] flex-col lg:flex-row">
-          <img src="/logo-ppsn.png" className="max-w-sm rounded-lg shadow-2xl" />
+          <img src="/logo-ppsn.png" alt='logo-ppsn' className='max-w-sm rounded-lg shadow-2xl'  />
           <div>
             <h1 className="text-4xl font-bold"> Perhimpunan Pelajar Sains Nasional (PPSN) </h1>
             <p className="py-6 text-xl text-justify"> Organisasi yang menjadi wadah kepada seluruh talenta sains Indonesia yang bertujuan untuk mengembangkan aspek sosial, akademik serta nasionalisme dan persatuan kepada saintis muda di Republik Indonesia </p>
