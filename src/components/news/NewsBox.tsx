@@ -9,7 +9,7 @@ interface NewsBoxProps {
 
 export default function NewsBox(news: NewsBoxProps) {
     return (
-        <Link href={`http://localhost:3000/berita/${news.id}`}>
+        <Link href={`berita/${news.id}`}>
             <div className="relative aspect-square overflow-hidden cursor-pointer">
                 <img src={news.picture} alt={news.headline} className="w-full h-full object-cover"/>
                 <div className="absolute bottom-0 left-0 right-0 h-[45%] bg-black opacity-70 p-2">

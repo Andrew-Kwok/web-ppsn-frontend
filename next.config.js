@@ -6,7 +6,8 @@ const nextConfig = {
 // module.exports = nextConfig
 module.exports = {
   publicRuntimeConfig: {
-    API_URL: 'http://localhost:8000/api',
+    // API_URL: 'http://localhost:8000',
+    API_URL: 'https://drewkwok.pythonanywhere.com',
     
     PPSN_PHONE:'+62-818-0713-7217',
     PPSN_EMAIL: 'ppsnasional@gmail.com',

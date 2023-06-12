@@ -1,3 +1,4 @@
+import getConfig from "next/config";
 import React from 'react'
 import { useState, useEffect } from 'react';
 
@@ -12,12 +13,13 @@ interface PageProps {
 }
 
 const Page: React.FC<PageProps> = ({ id }) => {
+    const { publicRuntimeConfig } = getConfig()
     const [data, setData] = useState<NewsProps | null>(null)
 
     useEffect(() => {
         const fetchData = async() => {
             try {
-                const response = await fetch(`http://localhost:8000/api/news/${id}`);
+                const response = await fetch(`${publicRuntimeConfig.API_URL}/api/news/${id}`);
                 const jsonData  = await response.json();
                 setData(jsonData);
 
@@ -37,7 +39,7 @@ const Page: React.FC<PageProps> = ({ id }) => {
             <NewsSingleLayout
                 id={data.id}
                 headline={data.headline}
-                picture={`http://localhost:8000${data.picture}`}
+                picture={`${publicRuntimeConfig.API_URL}${data.picture}`}
                 content={data.content}
                 pub_date={data.pub_date}
                 upd_date={data.upd_date}

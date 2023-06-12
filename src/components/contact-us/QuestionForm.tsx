@@ -45,7 +45,7 @@ export default function QuestionForm() {
             }
 
             try {
-                const response = await fetch (publicRuntimeConfig.API_URL + '/question/', {
+                const response = await fetch (publicRuntimeConfig.API_URL + '/api/question/', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

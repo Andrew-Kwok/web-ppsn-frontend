@@ -1,18 +1,20 @@
 // import Image from "next/image";
 // Image doesn't work, will use <img /> as the solution (which is slower)
 import Link from "next/link"
+import getConfig from "next/config";
 import { useState, useEffect } from "react"
 
 import { NewsProps } from '@components/components/news/NewsProps'
 import NewsBox from '@components/components/news/NewsBox'
 
 export default function Page() {
+    const { publicRuntimeConfig } = getConfig()
     const [data, setData] = useState([])
 
     useEffect(() => {
         const fetchData = async() => {
             try {
-                const response = await fetch('http://localhost:8000/api/news/');
+                const response = await fetch(`${publicRuntimeConfig.API_URL}/api/news/`);
                 const jsonData  = await response.json();
                 setData(jsonData);
             } catch(error) {
@@ -34,7 +36,7 @@ export default function Page() {
                                 <NewsBox
                                     id={item.id}
                                     headline={item.headline}
-                                    picture={`http://localhost:8000${item.picture}`}
+                                    picture={`${publicRuntimeConfig.API_URL}${item.picture}`}
                                 />
                             </li>
                         ))}
