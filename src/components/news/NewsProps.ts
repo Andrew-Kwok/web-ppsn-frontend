@@ -7,7 +7,14 @@ export interface NewsProps {
     headline: string;
     picture: string;
     content: string;    
-    pub_date:    string;
-    upd_date: string;
+    created_at: string;
+    updated_at: string;
     authors: AuthorProps[];
+}
+
+export interface NewsPagination {
+    count: number;
+    next: string;
+    previous: string;
+    results: NewsProps[];
 }

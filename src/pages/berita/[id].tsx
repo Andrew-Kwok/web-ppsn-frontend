@@ -41,8 +41,8 @@ const Page: React.FC<PageProps> = ({ id }) => {
                 headline={data.headline}
                 picture={`${publicRuntimeConfig.API_URL}${data.picture}`}
                 content={data.content}
-                pub_date={data.pub_date}
-                upd_date={data.upd_date}
+                created_at={data.created_at}
+                updated_at={data.updated_at}
                 authors={data.authors}
             />
         )

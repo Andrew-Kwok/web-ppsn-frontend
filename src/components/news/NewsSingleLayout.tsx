@@ -24,7 +24,7 @@ export default function Page(news: NewsProps) {
                 alt={news.headline}
             /> */}
 
-            <h2> {news.pub_date} </h2>
+            <h2> {news.created_at} </h2>
             <p dangerouslySetInnerHTML={{__html: news.content}} />
         </div>
     )
