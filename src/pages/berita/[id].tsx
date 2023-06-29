@@ -30,7 +30,7 @@ const Page: React.FC<PageProps> = ({ id }) => {
         }
 
         fetchData();
-    }, [id])
+    }, [id, publicRuntimeConfig.API_URL])
 
     if (!data) {
         return <ErrorPage statusCode={404} />;

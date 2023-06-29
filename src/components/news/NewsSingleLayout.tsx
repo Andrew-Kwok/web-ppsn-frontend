@@ -1,4 +1,4 @@
-// import Image from "next/image";
+import Image from "next/image";
 
 import { NewsProps } from '@components/components/news/NewsProps'
 
@@ -13,8 +13,12 @@ export default function Page(news: NewsProps) {
             </ul>
                     
             <h1> {news.picture} </h1>
-
-            <img src={news.picture} alt={news.headline} />
+            
+            <Image 
+                src={news.picture}
+                alt={news.headline}
+                fill
+            />
 
 
             {/* Unable to use builtin next.js image, need to configure later. Check Console for Internal Server Error */}

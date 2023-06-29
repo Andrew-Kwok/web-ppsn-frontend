@@ -23,7 +23,7 @@ export default function Page() {
         }
 
         fetchData();
-    }, [])
+    }, [publicRuntimeConfig.API_URL])
 
     return (
         <div className="min-h-fit">
