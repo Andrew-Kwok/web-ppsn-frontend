@@ -26,14 +26,14 @@ export default function Page() {
     }, [])
 
     return (
-        <div className="min-h-screen">
-            <div className="h-min flex justify-center m-8">
-                <div className="w-11/12 max-w-7xl bg-white shadow-lg p-4">
+        <div className="min-h-fit">
+            <div className="flex justify-center my-8">
+                <div className="w-full max-w-7xl bg-white shadow-lg p-2">
                     <h1 className="text-2xl font-bold"> Berita Terbaru </h1>
                     <div className="flex justify-center items-center"> 
-                        {data && <ul className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-4">
+                        {data && <ul className="w-full min-h-screen grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-2">
                             {data.results.map((item: NewsProps) => (
-                                <li key={item.id} className="w-full p-[3%]">
+                                <li key={item.id} className="w-full p-[2%]">
                                     <NewsBox
                                         id={item.id}
                                         headline={item.headline}
@@ -46,6 +46,6 @@ export default function Page() {
                     <Link href="/berita"> <p className="text-xl text-right text-orange-800"> Lihat Berita Lebih Lengkap &#62; </p> </Link>
                 </div>
             </div>
-        </div>
+        </div>  
     )
 }

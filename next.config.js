@@ -15,6 +15,6 @@ module.exports = {
     PPSN_LI: 'https://id.linkedin.com/company/perhimpunan-pelajar-sains-nasional',
   },
   images: {
-    domains: ['localhost', 'images.unsplash.com']
+    domains: ['localhost', 'images.unsplash.com', 'drewkwok.pythonanywhere.com']
   },
 }
