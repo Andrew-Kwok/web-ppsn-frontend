@@ -40,25 +40,25 @@ export default function Page() {
             </div>
 
             {/* Tujuan */}
-            <div id="tujuan" className="hero min-h-screen bg-gray-200">
+            <div id="tujuan" className="hero min-h-screen bg-gray-200 py-4">
                 <div className="hero-content flex-col lg:flex-row w-2/3">
-                    <div className="flex flex-row lg:flex-col">
-                        <Image 
-                            className="max-w-[16rem] rounded-lg shadow-2xl m-12" 
-                            src="/logo-ppsn.png" 
-                            alt="Logo PPSN"
-                            data-aos="zoom-in-right"
-                            width={300}
-                            height={300} 
-                        />
-                        <Image 
-                            className="max-w-[16rem] rounded-lg shadow-2xl m-12" 
-                            src="/logo-akti.png" 
-                            alt="Logo AKTI"
-                            data-aos="zoom-in-right" 
-                            width={300}
-                            height={300}
-                        />
+                    <div className="flex flex-col md:flex-row lg:flex-col w-full items-center">
+                        <div className="relative min-w-[8rem] w-full md:w-1/2 lg:w-[16rem] aspect-square rounded-lg shadow-2xl m-2 lg:m-8">
+                            <Image  
+                                src="/logo-ppsn.png" 
+                                alt="Logo PPSN"
+                                data-aos="zoom-in-right"
+                                fill
+                            />
+                        </div>
+                        <div className="relative min-w-[8rem] w-full md:w-1/2 lg:w-[16rem] aspect-square rounded-lg shadow-2xl m-2 lg:m-8">
+                            <Image 
+                                src="/logo-akti.png" 
+                                alt="Logo AKTI"
+                                data-aos="zoom-in-right" 
+                                fill
+                            />
+                        </div>
                     </div>
                     <div>
                         <h1 className="text-5xl font-bold" data-aos="zoom-in-right"> TUJUAN </h1>

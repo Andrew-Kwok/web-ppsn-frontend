@@ -2,7 +2,7 @@ import Link from "next/link"
 import getConfig from "next/config";
 import { useState, useEffect } from "react"
 
-import { NewsPagination, NewsProps } from '@components/components/news/NewsProps'
+import { NewsProps } from '@components/components/news/NewsProps'
 import NewsBox from '@components/components/news/NewsBox'
 
 export default function Page() {
