@@ -22,11 +22,12 @@ export default function Navbar() {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    if (windowSize.width > 768) {
-        return <DesktopNavbar />
-    } else {
-        return <MobileNavbar />
-    }
+    return <DesktopNavbar />
+    // if (windowSize.width > 768) {
+    //     return <DesktopNavbar />
+    // } else {
+    //     return <MobileNavbar />
+    // }
 };
      
 function DesktopNavbar() {
