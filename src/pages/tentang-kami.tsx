@@ -5,7 +5,7 @@ export default function Page() {
     return (
         <div>
             {/* Logo & PPSN */}
-            <div className="hero min-h-screen bg-gray-200">
+            {/* <div className="hero min-h-screen bg-gray-200">
                 <div className="hero-content max-w-[40rem] text-center">
                     <div>
                         <Image className="mx-auto w-[25rem]"
@@ -21,10 +21,10 @@ export default function Page() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* Latar Belakang */}
-            <div id="latar-belakang" className="min-h-screen w-full flex justify-center items-center py-28">
+            {/* <div id="latar-belakang" className="min-h-screen w-full flex justify-center items-center py-28">
                 <div className="w-4/5 lg:w-1/2">
                     <h1 className="text-center text-5xl font-bold" data-aos="fade-up"> LATAR BELAKANG </h1>
                     <div className="chat chat-start">
@@ -38,7 +38,7 @@ export default function Page() {
                     </div>
                 </div>
             </div>
-
+ */}
             {/* Tujuan */}
             <div id="tujuan" className="hero min-h-screen bg-gray-200 py-4">
                 <div className="hero-content flex-col lg:flex-row w-full md:w-3/4 lg:w-2/3">
