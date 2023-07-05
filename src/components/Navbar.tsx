@@ -81,7 +81,7 @@ function MobileNavbar() {
                         <summary>
                             Menu
                         </summary>
-                        <ul className="p-2 bg-base-100">
+                        <ul className="p-2 bg-base-100 right-0">
                             <li><Link href="/berita"> Berita </Link></li>
                             <li><Link href="tentang-kami/"> Tentang Kami </Link></li>
                             <li><Link href="hubungi-kami/"> Hubungi Kami </Link></li>
