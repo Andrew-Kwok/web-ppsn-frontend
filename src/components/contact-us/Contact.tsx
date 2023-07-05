@@ -4,11 +4,30 @@ import getConfig from "next/config";
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useState, useEffect } from 'react';
 
 import Map from './Map';
 
 export default function Contact() {
     const { publicRuntimeConfig } = getConfig()
+
+    const [windowSize, setWindowSize] = useState({
+        width: 0,
+        height: 0,
+    });
+
+    useEffect(() => {
+        function handleResize() {
+            setWindowSize({
+                width: window.innerWidth,
+                height: window.innerHeight,
+            });
+        }
+
+        window.addEventListener("resize", handleResize);
+        handleResize();
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     return (
         <div className="container flex justify-center items-center mx-auto h-[150vh] lg:h-screen">
@@ -31,7 +50,7 @@ export default function Contact() {
                     <div className="divider lg:divider-horizontal opacity-0"></div> 
                     <div className="w-full lg:w-1/2 relative mt-12">
                         <h2 className="text-4xl text-center"> Kontak </h2>
-                        <div className="absolute left-20">
+                        <div className="flex justify-center">
                             <ul className="mt-6">
                                 <li className="contact-list">
                                     <Link href={`tel:${publicRuntimeConfig.PPSN_PHONE}`} className="contact-list-icon hover:text-color-phone"> 
@@ -62,7 +81,7 @@ export default function Contact() {
                                         <FontAwesomeIcon icon={faLinkedin} /> 
                                     </Link>
                                     <Link href={publicRuntimeConfig.PPSN_LI} className="contact-list-text hover:text-color-li after:bg-color-li"> 
-                                        Perhimpunan Pelajar Sains Nasional
+                                        {windowSize.width > 768 ? 'Perhimpunan Pelajar Sains Nasional' : 'PPSN'}
                                     </Link>
                                 </li>
                             </ul>
