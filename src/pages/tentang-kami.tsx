@@ -40,10 +40,10 @@ export default function Page() {
             </div>
  */}
             {/* Tujuan */}
-            <div id="tujuan" className="hero min-h-screen bg-gray-200 py-4">
+            {/* <div id="tujuan" className="hero min-h-screen bg-gray-200 py-4">
                 <div className="hero-content flex-col lg:flex-row w-full md:w-3/4 lg:w-2/3">
                     <div className="flex flex-col md:flex-row lg:flex-col w-full items-center">
-                        <div className="relative min-w-[8rem] w-1/2 lg:w-[16rem] aspect-square rounded-lg shadow-2xl m-2 lg:m-8">
+                        <div className="relative min-w-[8rem] w-2/3 lg:w-[16rem] aspect-square rounded-lg shadow-2xl m-2 lg:m-8">
                             <Image
                                 src="/logo-ppsn.png" 
                                 alt="Logo PPSN"
@@ -51,7 +51,7 @@ export default function Page() {
                                 fill
                             />
                         </div>
-                        <div className="relative min-w-[8rem] w-1/2 lg:w-[16rem] aspect-square rounded-lg shadow-2xl m-2 lg:m-8">
+                        <div className="relative min-w-[8rem] w-2/3 lg:w-[16rem] aspect-square rounded-lg shadow-2xl m-2 lg:m-8">
                             <Image 
                                 src="/logo-akti.png" 
                                 alt="Logo AKTI"
@@ -65,7 +65,7 @@ export default function Page() {
                         <p className="bg-gray-300 p-8 rounded-box text-2xl text-justify mt-8" data-aos="zoom-in-right"> Perhimpunan Pelajar Sains Nasional adalah organisasi talenta sains Indonesia yang merupakan bagian dari Aliansi Komunitas Talenta Indonesia, di bawah naungan Pusat Prestasi Nasional - Kemendikbudristek RI, yang bertujuan untuk menghimpun, membentuk, dan menembangkan talenta sains muda Indonesia dalam berbagai lini untuk memajukan penetrasi ilmu pengetahuan dan meningkatkan minat sains generasi muda Indoensia dalam rangka mengembangkan aspek sosial, akamdemis serta nasionalisme dan persatuan kepada saintis muda Indonesia. </p>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* Visi Misi */}
             <div id="visi-misi" className="hero min-h-screen">
