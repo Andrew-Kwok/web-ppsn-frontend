@@ -33,13 +33,12 @@ export default function Navbar() {
 function DesktopNavbar() {
     return (
     <div className="navbar bg-base-100 sticky top-0 z-10" data-theme="dark">
-        <div className="flex-1">
+        <div className="relative h-full">
             <Link href="/">
             <Image className="ml-5"
                 src="/logo-ppsn.png"
                 alt="Logo PPSN"
-                width={48}
-                height={48}
+                fill
             />
             </Link>
         </div>
