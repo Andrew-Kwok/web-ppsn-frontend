@@ -41,17 +41,17 @@ export default function Page() {
 
             {/* Tujuan */}
             <div id="tujuan" className="hero min-h-screen bg-gray-200 py-4">
-                <div className="hero-content flex-col lg:flex-row w-2/3">
+                <div className="hero-content flex-col lg:flex-row w-full md:w-3/4 lg:w-2/3">
                     <div className="flex flex-col md:flex-row lg:flex-col w-full items-center">
-                        <div className="relative min-w-[8rem] w-full md:w-1/2 lg:w-[16rem] aspect-square rounded-lg shadow-2xl m-2 lg:m-8">
-                            <Image  
+                        <div className="relative min-w-[8rem] w-1/2 lg:w-[16rem] aspect-square rounded-lg shadow-2xl m-2 lg:m-8">
+                            <Image
                                 src="/logo-ppsn.png" 
                                 alt="Logo PPSN"
                                 data-aos="zoom-in-right"
                                 fill
                             />
                         </div>
-                        <div className="relative min-w-[8rem] w-full md:w-1/2 lg:w-[16rem] aspect-square rounded-lg shadow-2xl m-2 lg:m-8">
+                        <div className="relative min-w-[8rem] w-1/2 lg:w-[16rem] aspect-square rounded-lg shadow-2xl m-2 lg:m-8">
                             <Image 
                                 src="/logo-akti.png" 
                                 alt="Logo AKTI"
