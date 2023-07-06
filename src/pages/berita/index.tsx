@@ -59,8 +59,8 @@ export default function Page() {
 
     return (
         <div className="min-h-fit">
-            <div className="flex justify-center my-8">
-                <div className="w-full min-h-screen max-w-7xl bg-white shadow-lg p-2">
+            <div className="flex justify-center min-h-screen my-8">
+                <div className="w-full max-w-7xl bg-white shadow-lg p-2">
                     <h1 className="text-2xl font-bold"> Kumpulan Berita PPSN </h1>
                     <div className="flex justify-center items-center"> 
                         {news && <ul className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-2">
