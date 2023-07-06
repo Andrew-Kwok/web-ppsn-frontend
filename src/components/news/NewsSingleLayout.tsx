@@ -1,8 +1,12 @@
 import Image from "next/image";
 
 import { NewsProps } from '@components/components/news/NewsProps'
+import UnderConstruction from "../UnderConstruction";
 
 export default function Page(news: NewsProps) {
+    return <UnderConstruction />
+
+    // TODO: Yonge
     return (
         <div>
             <h1> {news.headline} </h1>
