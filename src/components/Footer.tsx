@@ -13,16 +13,14 @@ const Footer = ({}) => {
     return (
         <div className="footer p-10 bg-gray-300 text-black">
             <div>
-                <Link href="/" style={{ maxHeight: '15vh', maxWidth: '100%', overflow: 'hidden' }}>             
-                    <Image className="ml-5"
-                        src="/logo-ppsn.png"
-                        alt="Logo PPSN"
-                        width={120}
-                        height={120}
-                        // TODO: Set max-height as 15vh
-                    /> 
-                </Link>
-                <p> 2021-2023 Perhimpunan Pelajar Sains Nasional </p>
+            <Link href="/" className='relative h-32 aspect-square'>
+                <Image 
+                    src="/logo-ppsn.png"
+                    alt="Logo PPSN"
+                    fill
+                />
+            </Link>
+            <p className='mt-4'> 2021-2023 Perhimpunan Pelajar Sains Nasional </p>
             </div> 
             <div className="text-xl">
                 <span className="footer-title"> <Link className="link link-hover" href="/tentang-kami"> Tentang Kami </Link> </span>  
