@@ -75,7 +75,7 @@ export default function QuestionForm() {
 
             <div className="flex flex-col lg:flex-row justify-between">
                 <label className="w-full lg:w-5/12 mb-4">
-                    <input type="text" placeholder="Nama lengkap" className="input input-bordered w-full" value={fullName} onChange={(e) => setFullName(e.target.value)} />
+                    <input type="text" placeholder="Nama lengkap" className="input input-bordered w-full bg-gray-100" value={fullName} onChange={(e) => setFullName(e.target.value)} />
                     {fullNameError && 
                     <div className="alert alert-error shadow-lg p-1 m-1">
                         <div>
@@ -86,7 +86,7 @@ export default function QuestionForm() {
                     }
                 </label>
                 <label className="w-full lg:w-5/12 mb-4">
-                    <input type="email" placeholder="E-mail Anda" className="input input-bordered w-full" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input type="email" placeholder="E-mail Anda" className="input input-bordered w-full bg-gray-100" value={email} onChange={(e) => setEmail(e.target.value)} />
                     {emailError && 
                     <div className="alert alert-error shadow-lg p-1 m-1">
                         <div>
@@ -99,7 +99,7 @@ export default function QuestionForm() {
             </div> 
             <div>
                 <label>
-                    <textarea placeholder="Tuliskan pertanyaan anda disini" className="input input-bordered w-full h-[50vh] resize-y" value={questionText} onChange={(e) => setQuestionText(e.target.value)} />
+                    <textarea placeholder="Tuliskan pertanyaan anda disini" className="input input-bordered w-full h-[50vh] resize-y bg-gray-100" value={questionText} onChange={(e) => setQuestionText(e.target.value)} />
                     {questionTextError && 
                     <div className="alert alert-error shadow-lg p-1 m-1">
                         <div>
