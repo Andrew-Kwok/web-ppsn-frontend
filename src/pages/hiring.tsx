@@ -68,7 +68,7 @@ export default function Page() {
                         <h2 className="card-title"> Unggah Formulir </h2>
                         <p> Unggahlah formulir yang telah anda isi (hanya menerima ekstensi .docx)  </p>
                         <div className="card-actions justify-end">
-                            <input type="file" className="file-input file-input-bordered file-input-primary w-full max-w-xs bg-gray-100" />
+                            <input type="file" className="file-input file-input-bordered file-input-primary w-full bg-gray-100" />
                             <button className="btn btn-primary"> Unggah </button>
                         </div>
                     </div>
