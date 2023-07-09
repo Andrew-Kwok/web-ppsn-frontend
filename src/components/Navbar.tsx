@@ -41,6 +41,7 @@ function DesktopNavbar() {
         </Link>
         <div>
             <ul className="menu menu-horizontal px-1">
+                <li> <Link href="hiring" className='bg-primary text-white hover:bg-transparent hover:outline-primary hover:font-bold hover:text-white transition-all focus:bg-primary-focus'> We're Hiring </Link></li>
                 <li><Link href="/berita"> Berita </Link></li>
                 <li>
                     <details>
