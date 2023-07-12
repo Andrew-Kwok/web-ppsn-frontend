@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image'
+import Head from 'next/head';
 
 import { useState, useEffect } from 'react';
 
@@ -22,11 +23,13 @@ export default function Navbar() {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    if (windowSize.width > 768) {
-        return <DesktopNavbar />
-    } else {
-        return <MobileNavbar />
-    }
+    return <div>
+        <Head>
+            <title>PPSN - Perhimpunan Pelajar Sains Nasional</title>
+            <link rel="icon" href="/logo-ppsn.png" type="image/png" />
+        </Head>
+        {windowSize.width > 768 ? <DesktopNavbar /> : <MobileNavbar /> }
+    </div>
 };
      
 function DesktopNavbar() {
