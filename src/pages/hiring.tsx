@@ -60,7 +60,7 @@ export default function Page() {
 
                     const message = await response.json()
                     // setMessage(message);
-                    alert('Error uploading file: ' + response.statusText);
+                    alert('Error uploading file: ' + message);
                 }
             } catch (error) {
                 // setSuccess(false);
