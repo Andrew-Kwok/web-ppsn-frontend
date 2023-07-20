@@ -117,7 +117,6 @@ export default function Page(news: NewsProps) {
 
     let validLatestNews = latestNews?.filter((item) => validNextNews(item)).slice(0, 4)
 
-    // TODO: Yonge          
     return (
         <div className="container mx-auto my-10 px-5 bg-slate-100 sm:max-w-xl md:max-w-3xl lg:max-w-5xl xl:max-w-6xl">
 
@@ -201,7 +200,7 @@ export default function Page(news: NewsProps) {
                             {validLatestNews && <ul className="flex-col">
                                 {validLatestNews.slice(1)
                                 .map((item: NewsProps) => 
-                                    <li className="my-3">
+                                    <li className="my-3" key={item.id} >
                                         <SinglePageNewsBox
                                             id={item.id}
                                             headline={item.headline}
