@@ -1,7 +1,70 @@
 import Link from 'next/link';
 import Image from 'next/image'
+import getConfig from "next/config";
+import { useRouter } from 'next/router';
+import React, { useState, ChangeEvent } from 'react';
+
 
 export default function Page() {
+    const { publicRuntimeConfig } = getConfig()
+    const router = useRouter();
+
+    const [userEmail, setUserEmail] = useState<string | null>(null);
+    const [userDob, setUserDob] = useState<string | null>(null);
+    const [boxChecked, setBoxChecked] = useState<boolean>(false);
+
+    const isEmailValid = (email: string | null): boolean => {
+        if (email === null) {
+            return false
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };    
+
+    const handleUserEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setUserEmail(e.target.value);
+    }
+
+    const handleUserDobChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setUserDob(e.target.value);
+    }
+
+    const handleBoxCheckedChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setBoxChecked(e.target.checked);
+    }
+
+    const handleSubmit = async() => {
+        try {
+            if (!isEmailValid(userEmail)) {
+                alert('Invalid email format');
+                return;
+            }
+            
+            const apiUrl = publicRuntimeConfig.API_URL + '/api/hiring/uuid/'
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },          
+                body: JSON.stringify({
+                    email: userEmail,
+                    tanggal_lahir: userDob,
+                }),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error);
+            }
+
+            router.push(`/pengumuman-oprec/${data.uuid}`); 
+        } catch (error) {
+            alert(error);
+        }
+    } 
+
     return (
         <div data-theme="light">
             <div className="hero min-h-screen bg-base-200">
@@ -32,7 +95,12 @@ export default function Page() {
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="text" placeholder="email" className="input input-bordered input-primary" />
+                            <input 
+                                type="email"
+                                placeholder="email" 
+                                className="input input-bordered input-primary"
+                                onChange={handleUserEmailChange}
+                            />
                             <label className="label">
                                 <span className="label-text-alt"> Masukkan email anda sesuai formulir yang dikirim </span>
                             </label>
@@ -42,18 +110,32 @@ export default function Page() {
                             <label className="label">
                                 <span className="label-text">Tanggal Lahir</span>
                             </label>
-                        <input type="date" placeholder="tanggal lahir" className="input input-bordered input-primary" />
+                            <input 
+                                type="date"
+                                placeholder="tanggal lahir"
+                                className="input input-bordered input-primary"
+                                onChange={handleUserDobChange}
+                            />
+                        </div>
                         
+
                         <div className="form-control">
                             <label className="label cursor-pointer justify-normal">
-                                <input type="checkbox" className="checkbox checkbox-primary" />
+                                <input 
+                                    type="checkbox"
+                                    className="checkbox checkbox-primary"
+                                    checked={boxChecked}
+                                    onChange={handleBoxCheckedChange}
+                                />
                                 <span className="label-text ml-2"> Dengan ini saya menyatakan bahwa apabila di kemudian hari ditemukan ketidaksesuaian dengan syarat dan ketentuan dalam SNRPB PPSN 2023, maka status kelulusan saya dibatalkan. </span> 
                             </label>
                         </div>
-                        
-                        </div>
                             <div className="form-control mt-4">
-                            <button className="btn btn-primary">Lihat Hasil</button>
+                            <button 
+                                className="btn btn-primary"
+                                disabled={!boxChecked || !userEmail || !userDob}
+                                onClick={handleSubmit}
+                            > Lihat Hasil </button>
                         </div>
                     </div>
                     </div>
