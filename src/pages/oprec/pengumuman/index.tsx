@@ -58,7 +58,7 @@ export default function Page() {
                 throw new Error(data.error);
             }
 
-            router.push(`/oprec/prengumuman/${data.uuid}`); 
+            router.push(`/oprec/pengumuman/${data.uuid}`); 
         } catch (error) {
             alert(error);
         }
