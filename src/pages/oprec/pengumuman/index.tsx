@@ -23,7 +23,7 @@ export default function Page() {
     };    
 
     const handleUserEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setUserEmail(e.target.value);
+        setUserEmail(e.target.value.toLowerCase());
     }
 
     const handleUserDobChange = (e: ChangeEvent<HTMLInputElement>) => {
