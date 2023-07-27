@@ -11,6 +11,7 @@ export default function Page() {
     const [userEmail, setUserEmail] = useState<string | null>(null);
     const [userDob, setUserDob] = useState<string | null>(null);
     const [boxChecked, setBoxChecked] = useState<boolean>(false);
+    const [loading, setLoading] = useState(false); // Track the loading state
 
     const isEmailValid = (email: string | null): boolean => {
         if (email === null) {
@@ -34,6 +35,7 @@ export default function Page() {
     }
 
     const handleSubmit = async() => {
+        setLoading(true);
         try {
             if (!isEmailValid(userEmail)) {
                 alert('Invalid email format');
@@ -61,6 +63,8 @@ export default function Page() {
             router.push(`/oprec/pengumuman/${data.uuid}`); 
         } catch (error) {
             alert(error);
+        } finally {
+            setLoading(false);
         }
     } 
 
@@ -130,11 +134,14 @@ export default function Page() {
                             </label>
                         </div>
                             <div className="form-control mt-4">
-                            <button 
-                                className="btn btn-primary"
-                                disabled={!boxChecked || !userEmail || !userDob}
-                                onClick={handleSubmit}
-                            > Lihat Hasil </button>
+                            {
+                                loading ? <span className="btn loading loading-spinner text-primary"></span> :
+                                <button 
+                                    className="btn btn-primary"
+                                    disabled={!boxChecked || !userEmail || !userDob}
+                                    onClick={handleSubmit}
+                                > Lihat Hasil </button>
+                            }
                         </div>
                     </div>
                     </div>
