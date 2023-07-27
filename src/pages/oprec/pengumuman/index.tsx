@@ -4,18 +4,7 @@ import getConfig from "next/config";
 import { useRouter } from 'next/router';
 import React, { useState, ChangeEvent } from 'react';
 
-import { OprecAccepted, OprecRejected } from "@components/components/oprec/OprecResultLayout";
-
 export default function Page() {
-    return (
-        <OprecRejected
-            email="jla290605@gmail.com"
-            nama="JASMINE LIANNA ATHIRAH"
-            tanggal_lahir="Wednesday, 29 June 2005"
-            status={true}
-        />
-    )
-
     const { publicRuntimeConfig } = getConfig()
     const router = useRouter();
 

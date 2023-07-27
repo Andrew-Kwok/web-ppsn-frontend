@@ -1,48 +1,60 @@
 import getConfig from "next/config";
 import ErrorPage from 'next/error';
-import { GetStaticProps, GetStaticPaths } from 'next';
-
+import { useRouter } from 'next/router'
 
 import React, { useEffect, useState } from 'react'
 
 import UnderConstruction from '@components/components/UnderConstruction';
 import { OprecResult } from '@components/components/oprec/Models';
 import { OprecAccepted, OprecRejected } from "@components/components/oprec/OprecResultLayout";
+import Loading from "@components/components/Loading";
 
-interface PageProps {
-    uuid: string;
-}
 
-const Page: React.FC<PageProps> = ({ uuid }) => {
+export default function Page() {
+    const router = useRouter()
+    const uuid = router.query.uuid as string
+
     const { publicRuntimeConfig } = getConfig()
     const [data, setData] = useState<OprecResult | null>(null)
+    const [loading, setLoading] = useState(false); // Track the loading state
 
     useEffect(() => {
         const fetchData = async() => {
+            setLoading(true);
             try {
                 const response = await fetch(publicRuntimeConfig.API_URL + `/api/hiring/decision/${uuid}`)
                 const jsonData = await response.json();
                 setData(jsonData);
             } catch (error) {
                 console.error('Error fetching data: ', error);
+            } finally {
+                setLoading(false);
             }
         }
         
         fetchData();
     }, [uuid, publicRuntimeConfig.API_URL])
 
+
+    if (loading) {
+        return <Loading />
+    }
     
     if (!data) {
         return <ErrorPage statusCode={404} />;
     } 
 
+    console.log('status: ', data.status);
+    
     if (data.status) {
-        <OprecAccepted
-            email={data.email}
-            nama={data.nama}
-            tanggal_lahir={data.tanggal_lahir}
-            status={data.status}
-        />
+        return (
+            <OprecAccepted
+                email={data.email}
+                nama={data.nama}
+                tanggal_lahir={data.tanggal_lahir}
+                status={data.status}
+            />
+        )
     }
 
     return (
@@ -54,23 +66,3 @@ const Page: React.FC<PageProps> = ({ uuid }) => {
             />
         )
 }
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const id = params?.uuid as string | undefined;
-
-    return {
-        props: {
-            id,
-        },
-    };
-};
-  
-export const getStaticPaths: GetStaticPaths = async () => {
-    return {
-        paths: [],
-        fallback: 'blocking',
-    };
-};
-
-
-export default Page;
