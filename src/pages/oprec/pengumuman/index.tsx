@@ -75,12 +75,12 @@ export default function Page() {
                     <div className="card flex-shrink-0 w-full max-w-3xl shadow-2xl bg-base-100">
                     <div className="card-body">
 
-                        <div className="flex w-2/3">
+                        <div className="flex max-w-lg">
                             <Image 
                                 src="/logo-ppsn.png"
                                 alt="Logo PPSN"
-                                width={96}
-                                height={96}
+                                width={80}
+                                height={80}
                             />
                             <div className='ml-4'>
                                 <h2 className='font-bold'> Perhimpunan Pelajar Sains Nasional </h2>
