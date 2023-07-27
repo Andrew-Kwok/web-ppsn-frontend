@@ -76,12 +76,14 @@ export default function Page() {
                     <div className="card-body">
 
                         <div className="flex max-w-lg">
-                            <Image 
-                                src="/logo-ppsn.png"
-                                alt="Logo PPSN"
-                                width={80}
-                                height={80}
-                            />
+                            <div className='flex items-center min-w-fit'>
+                                <Image 
+                                    src="/logo-ppsn.png"
+                                    alt="Logo PPSN"
+                                    width={100}
+                                    height={100}
+                                />
+                            </div>
                             <div className='ml-4'>
                                 <h2 className='font-bold'> Perhimpunan Pelajar Sains Nasional </h2>
                                 <p> Jalan Gardu, Srengseng Sawah, Kec. Jagakarsa, Kota Jakarta Selatan, DKI Jakarta 12640 </p>
