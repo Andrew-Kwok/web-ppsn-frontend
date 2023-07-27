@@ -6,6 +6,13 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   // darkMode: 'false',
+  daisyui: {
+    themes: [
+      "light",
+      "dark",
+      "cyberpunk",
+    ],
+  },
   theme: {
     extend: {
       colors: {
