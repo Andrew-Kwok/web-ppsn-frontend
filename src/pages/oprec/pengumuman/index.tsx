@@ -101,7 +101,7 @@ export default function Page() {
                             <input 
                                 type="email"
                                 placeholder="email" 
-                                className="input input-bordered input-primary"
+                                className="input input-bordered input-primary w-full"
                                 onChange={handleUserEmailChange}
                             />
                             <label className="label">
@@ -116,7 +116,7 @@ export default function Page() {
                             <input 
                                 type="date"
                                 placeholder="tanggal lahir"
-                                className="input input-bordered input-primary"
+                                className="input input-bordered input-primary w-full"
                                 onChange={handleUserDobChange}
                             />
                         </div>
