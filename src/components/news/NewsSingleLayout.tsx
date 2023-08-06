@@ -41,8 +41,8 @@ function SinglePageNewsBox(news: NewsBoxProps) {
             picture={news.picture}
         />)
     }
-
 }
+
 function MainNewsBox(news: NewsBoxProps) {
     return (
         <Link href={`/berita/${news.id}`}>
@@ -68,6 +68,7 @@ function MainNewsBox(news: NewsBoxProps) {
         </Link>
     )
 }
+
 function SideNewsBox(news: NewsBoxProps) {
     return (
         <Link href={`/berita/${news.id}`}>
@@ -171,7 +172,7 @@ export default function Page(news: NewsProps) {
 
                     <div>
                         <div>
-                            <h2>Baca Selanjutnya</h2>
+                            <h2 className="font-bold text-lg"> Berita Terbaru Lainnya </h2>
                         </div>
                         <div>
                             {validLatestNews &&
@@ -190,11 +191,11 @@ export default function Page(news: NewsProps) {
                     </div>
                 </div>
 
-                <div className="lg:px-7 pt-7.5 lg:pl-5 flex-auto">
+                <div className="lg:px-7 pt-7.5 lg:pl-8 flex-auto">
                     <div className="container">
                         <div className="p-0.5">
                             <div className="text-bold"> 
-                                <h2>Baca Selanjutnya</h2>
+                                <h2 className="text-lg font-bold"> Berita Menarik Lainnya </h2>
                             </div>
                             
                             {validLatestNews && <ul className="flex-col">
