@@ -2,7 +2,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-interface NewsBoxProps {
+export interface NewsBoxProps {
     id: number;
     headline: string;
     picture: string;
