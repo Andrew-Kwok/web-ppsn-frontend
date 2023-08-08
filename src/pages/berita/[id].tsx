@@ -1,39 +1,50 @@
 import getConfig from "next/config";
-import React from 'react'
-import { useState, useEffect } from 'react';
-
-import { GetStaticProps, GetStaticPaths } from 'next';
 import ErrorPage from 'next/error';
+import { useRouter } from 'next/router'
+
+import React, { useState, useEffect } from 'react';
 
 import { NewsProps } from '@components/components/news/NewsProps'
 import NewsSingleLayout from "@components/components/news/NewsSingleLayout"
+import Loading from "@components/components/Loading";
 
-interface PageProps {
-    id: string;
-}
+export default function Page() {
+    const router = useRouter();
+    const id = router.query.id as string;
 
-const Page: React.FC<PageProps> = ({ id }) => {
-    const { publicRuntimeConfig } = getConfig()
-    const [data, setData] = useState<NewsProps | null>(null)
+    const { publicRuntimeConfig } = getConfig();
+    const [data, setData] = useState<NewsProps | null>(null);
+    const [loading, setLoading] = useState(false);
+    const [errorCode, setErrorCode] = useState(404);
 
     useEffect(() => {
         const fetchData = async() => {
+            setLoading(true);
             try {
                 const response = await fetch(`${publicRuntimeConfig.API_URL}/api/news/${id}`);
                 const jsonData  = await response.json();
-                setData(jsonData);
 
-                console.error(response.status)
+                if (response.ok) {
+                    setData(jsonData);
+                } else {
+                    setErrorCode(response.status);
+                }
             } catch(error) {
                 console.error('Error fetching data: ', error);
+            } finally {
+                setLoading(false);
             }
         }
 
         fetchData();
     }, [id, publicRuntimeConfig.API_URL])
 
+    if (loading) {
+        return <Loading />
+    }
+
     if (!data) {
-        return <ErrorPage statusCode={404} />;
+        return <ErrorPage statusCode={errorCode} />;
     } else {
         return (
             <NewsSingleLayout
@@ -48,28 +59,3 @@ const Page: React.FC<PageProps> = ({ id }) => {
         )
     }
 };
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const id = params?.id as string | undefined;
-
-    return {
-        props: {
-            id,
-        },
-    };
-};
-  
-export const getStaticPaths: GetStaticPaths = async () => {
-    return {
-        paths: [],
-        fallback: 'blocking',
-    };
-};
-
-export default Page;
-
-// export default function Page({}) {
-//     return (
-//         <UnderConstruction />
-//     )
-// }

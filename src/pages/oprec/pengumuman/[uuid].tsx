@@ -43,8 +43,6 @@ export default function Page() {
     if (!data) {
         return <ErrorPage statusCode={404} />;
     } 
-
-    console.log('status: ', data.status);
     
     if (data.status) {
         return (
