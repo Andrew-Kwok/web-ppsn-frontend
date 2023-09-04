@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Head from 'next/head';
 
 import { useState, useEffect } from 'react';
+import AuthIcon from './auth/NavbarAuthIcon';
 
 export default function Navbar() {
     const [windowSize, setWindowSize] = useState({
@@ -62,6 +63,7 @@ function DesktopNavbar() {
                     </details>
                 </li>
                 <li><Link href="hubungi-kami/"> Hubungi Kami </Link></li>
+                <li> <AuthIcon /> </li>
             </ul>
         </div>
     </div>
