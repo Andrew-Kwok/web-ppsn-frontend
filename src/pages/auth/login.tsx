@@ -14,8 +14,6 @@ export default function Login() {
             redirect: false,
         });
 
-        console.log("HAHAHA ", result)
-
         if (result?.error) {
             alert("invalid credentials");
         } else {
