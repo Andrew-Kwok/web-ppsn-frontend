@@ -93,33 +93,34 @@ export default function Page() {
         const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-        return (
+        return (            
             <div className="hero min-h-screen bg-base-200" data-theme="light">
                 <div className="hero-content text-center">
-                    <div className="max-w-2xl">
-                        <h1 className="text-5xl font-bold"> Pengumuman pada tanggal 1 Oktober 2023 Pukul 15:00 WIB </h1>
+                    <div className="max-w-3xl">
+                        <h2 className="text-4xl"> Pengumuman pada tanggal </h2>
+                        <h1 className='text-5xl font-bold'> 1 Oktober 2023 pukul 15:00 WIB </h1>
                         <div className="grid grid-flow-col gap-5 text-center auto-cols-max mt-5 justify-center">
                             <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
                                 <span className="countdown font-mono text-5xl">
-                                    {days}
+                                    <span style={{'--value': days} as any}>{days}</span>
                                 </span>
                                 hari
                             </div>
                             <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
                                 <span className="countdown font-mono text-5xl">
-                                    {hours}
+                                <span style={{'--value': hours} as any}>{hours}</span>
                                 </span>
                                 jam
                             </div>
                             <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
                                 <span className="countdown font-mono text-5xl">
-                                    {minutes}
+                                <span style={{'--value': minutes} as any}>{minutes}</span>
                                 </span>
                                 menit
                             </div>
                             <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
                                 <span className="countdown font-mono text-5xl">
-                                    {seconds}
+                                <span style={{'--value': seconds} as any}>{seconds}</span>
                                 </span>
                                 detik
                             </div>
