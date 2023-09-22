@@ -41,6 +41,8 @@ function DesktopNavbar() {
                 src="/logo-ppsn.png"
                 alt="Logo PPSN"
                 fill
+                priority={true}
+                sizes="(min-width: 60em) 24vw, (min-width: 28em) 45vw"  
             />
         </Link>
         <div>
@@ -78,6 +80,8 @@ function MobileNavbar() {
                 src="/logo-ppsn.png"
                 alt="Logo PPSN"
                 fill
+                priority={true}
+                sizes="(min-width: 60em) 24vw, (min-width: 28em) 45vw"
             />
         </Link>
         <div>
