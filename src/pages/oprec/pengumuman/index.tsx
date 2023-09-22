@@ -101,25 +101,25 @@ export default function Page() {
                         <div className="grid grid-flow-col gap-5 text-center auto-cols-max mt-5 justify-center">
                             <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
                                 <span className="countdown font-mono text-5xl">
-                                    <span style={{"--value":days}}></span>
+                                    {days}
                                 </span>
                                 hari
                             </div>
                             <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
                                 <span className="countdown font-mono text-5xl">
-                                    <span style={{"--value":hours}}></span>
+                                    {hours}
                                 </span>
                                 jam
                             </div>
                             <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
                                 <span className="countdown font-mono text-5xl">
-                                    <span style={{"--value":minutes}}></span>
+                                    {minutes}
                                 </span>
                                 menit
                             </div>
                             <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
                                 <span className="countdown font-mono text-5xl">
-                                    <span style={{"--value":seconds}}></span>
+                                    {seconds}
                                 </span>
                                 detik
                             </div>
