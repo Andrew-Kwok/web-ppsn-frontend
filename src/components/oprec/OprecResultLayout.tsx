@@ -53,7 +53,7 @@ export function OprecAccepted(input: OprecResult) {
                                     
                                     
                                     <p className='font-bold'> Selamat! Anda dinyatakan lulus seleksi SNRPB PPSN 2023 Tahap 1 </p>
-                                    <p className='max-w-lg'> Selanjutnya Anda diwajibkan untuk mengikuti Seleksi Tahap 2: Wawancara Bersama yang dilaksanakan pada tanggal 27 s.d. 30 Juli 2023. </p>
+                                    <p className='max-w-lg'> Selanjutnya Anda diwajibkan untuk mengikuti Seleksi Tahap 2: Wawancara Bersama yang dilaksanakan pada tanggal 26 s.d. 28 September 2023. </p>
                                     <p className='max-w-lg'> Ketentuan teknis seleksi tahap 2 dapat dilihat di <Link href={oprecKetentuanTeknis} className='underline'> sini </Link> </p>
                                     
                                     <div className='flex flex-col xl:flex-row justify-center align-middle'>
@@ -113,7 +113,8 @@ export function OprecRejected(input: OprecResult) {
                             
                             
                             <p className='font-bold'> Dinyatakan tidak lulus SNRPB PPSN 2023 Tahap 1 </p>
-                            <p className='max-w-lg'> Tetap semangat dan jangan putus asa! Masih ada kesempatan untuk mengikuti <strong>SNRPB PPSN 2023 Gelombang 2</strong> yang akan dibuka pada tanggal 4 s.d. 10 September 2023. </p>
+                            <p className='max-w-lg'> Tetap semangat dan jangan putus asa! </p>
+                            {/* <p className='max-w-lg'> Tetap semangat dan jangan putus asa! Masih ada kesempatan untuk mengikuti <strong>SNRPB PPSN 2023 Gelombang 2</strong> yang akan dibuka pada tanggal 4 s.d. 10 September 2023. </p> */}
                             
                             <div className='flex flex-col xl:flex-row justify-center align-middle'>
                                 <Link href={oprecDecisionLink} className="btn btn-primary xl:w-1/2 m-2"> Unduh Surat Keputusan Panitia Seleksi </Link>
