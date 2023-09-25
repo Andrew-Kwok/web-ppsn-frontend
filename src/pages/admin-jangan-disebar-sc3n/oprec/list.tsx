@@ -66,7 +66,7 @@ export default function Page() {
     }, []);
 
     return (
-        <div data-theme="light">
+        <div data-theme="light" className='min-h-screen'>
             <div>
                 <div className="card-body max-w-xl">
                     <h2 className="card-title"> Unggah Hasil Seleksi </h2>
@@ -101,8 +101,8 @@ export default function Page() {
                                 <th> {index + 1} </th>
                                 <td> {decision.nama} </td>
                                 <td> {decision.email} </td>
-                                <td> {decision.nama} </td>
-                                <td> {decision.nama} </td>
+                                <td> {decision.tanggal_lahir} </td>
+                                <td> {decision.status === null ? "NULL" : decision.status ? "LULUS" : "TIDAK LULUS"} </td>
                             </tr>
                         ))}
                     </tbody>
