@@ -97,7 +97,7 @@ export default function Page() {
                     </thead>
                     <tbody>
                         {decisionList.map((decision, index) => (
-                            <tr>
+                            <tr key={index}>
                                 <th> {index + 1} </th>
                                 <td> {decision.nama} </td>
                                 <td> {decision.email} </td>
