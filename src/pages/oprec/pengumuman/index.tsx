@@ -98,7 +98,7 @@ export default function Page() {
                 <div className="hero-content text-center">
                     <div className="max-w-3xl">
                         <h2 className="text-4xl"> Pengumuman pada tanggal </h2>
-                        <h1 className='text-5xl font-bold'> 1 Oktober 2023 pukul 15:00 WIB </h1>
+                        <h1 className='text-5xl font-bold'> 25 September 2023 pukul 15:00 WIB </h1>
                         <div className="grid grid-flow-col gap-5 text-center auto-cols-max mt-5 justify-center">
                             <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
                                 <span className="countdown font-mono text-5xl">
