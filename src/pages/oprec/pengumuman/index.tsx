@@ -72,7 +72,7 @@ export default function Page() {
     
     useEffect(() => {
         const timer = setInterval(() => {
-            const countDownDate = new Date("Oct 1, 2023 15:00:00 GMT+0700").getTime();
+            const countDownDate = new Date("Sep 25, 2023 15:00:00 GMT+0700").getTime();
             const now = new Date().getTime();
             const distance = countDownDate - now;
 
