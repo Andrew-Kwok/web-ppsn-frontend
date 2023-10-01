@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react'
 
 import UnderConstruction from '@components/components/UnderConstruction';
 import { OprecResult } from '@components/components/oprec/Models';
-import { OprecAccepted, OprecRejected } from "@components/components/oprec/OprecResultLayout";
+import { DivisionAccepted, DivisionRejected, OprecAccepted, OprecRejected } from "@components/components/oprec/OprecResultLayout";
 import Loading from "@components/components/Loading";
 
 
@@ -46,21 +46,23 @@ export default function Page() {
     
     if (data.status) {
         return (
-            <OprecAccepted
+            <DivisionAccepted
                 email={data.email}
                 nama={data.nama}
                 tanggal_lahir={data.tanggal_lahir}
                 status={data.status}
+                divisi={data.divisi}
             />
         )
     }
 
     return (
-            <OprecRejected
+            <DivisionRejected
                 email={data.email}
                 nama={data.nama}
                 tanggal_lahir={data.tanggal_lahir}
                 status={data.status}
+                divisi={data.divisi}
             />
         )
 }

@@ -8,6 +8,7 @@ interface ResponseData {
     email: string;
     tanggal_lahir: string;
     status: boolean;
+    divisi: string;
 }
 
 export default function Page() {
@@ -93,6 +94,7 @@ export default function Page() {
                             <th>Email</th>
                             <th>Tanggal Lahir</th>
                             <th>Status</th>
+                            <th>Divisi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -103,6 +105,7 @@ export default function Page() {
                                 <td> {decision.email} </td>
                                 <td> {decision.tanggal_lahir} </td>
                                 <td> {decision.status === null ? "NULL" : decision.status ? "LULUS" : "TIDAK LULUS"} </td>
+                                <td> {decision.divisi} </td>
                             </tr>
                         ))}
                     </tbody>
