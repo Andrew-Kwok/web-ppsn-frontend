@@ -11,6 +11,8 @@ module.exports = {
 
     PPSN_OPREC_DECISION_URL: 'https://drive.google.com/drive/folders/1HAdIcD4MRzalGgKxwgRxj1vsmSOQ9cnT?usp=sharing',
     PPSN_OPREC_KETENTUAN_TEKNIS: 'https://drive.google.com/drive/folders/12Wg92bsYWyb_FKnyQ6l8omLDqm1nP4k4',
+    PPSN_OPREC_DAFTAR_ULANG_FORM: 'https://docs.google.com/forms/d/e/1FAIpQLSco93i7IbtN5cXPjQLzcDLvX07nlAEeQCwgNobimJL7dHiowA/viewform',
+    PPSN_OPREC_PROGRAM_SAINTIS_MUDA_MENGAJAR: 'https://mercusuar.uzone.id/',
     PPSN_PHONE:'+62-818-0713-7217',
     PPSN_EMAIL: 'ppsnasional@gmail.com',
     PPSN_IG: 'https://www.instagram.com/ppsn.id/',
