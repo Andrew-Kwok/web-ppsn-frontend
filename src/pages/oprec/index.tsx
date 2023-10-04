@@ -11,10 +11,10 @@ export default function Page() {
 
 
     const handleDownloadForm = async() => {
-        const fileUrl = '/FORMULIR-PENDAFTARAN-GEL-1-SNRPB-PPSN.docx'
+        const fileUrl = '/FORMULIR-PENDAFTARAN-GEL-2-SNRPB-PPSN.docx'
         const link = document.createElement('a')
         link.href = fileUrl
-        link.download = 'FORMULIR-PENDAFTARAN-GEL-1-SNRPB-PPSN.docx'
+        link.download = 'FORMULIR-PENDAFTARAN-GEL-2-SNRPB-PPSN.docx'
         link.click()
     }
 
@@ -60,7 +60,7 @@ export default function Page() {
 
                     const message = await response.json()
                     // setMessage(message);
-                    alert('Error uploading file: ' + message);
+                    alert('Error uploading file: ' + message['message']);
                 }
             } catch (error) {
                 // setSuccess(false);

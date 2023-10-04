@@ -3,4 +3,5 @@ export interface OprecResult {
     nama: string;
     tanggal_lahir: string;
     status: boolean;
+    divisi: string;
 }
