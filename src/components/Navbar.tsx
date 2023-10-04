@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Head from 'next/head';
 
 import { useState, useEffect } from 'react';
+import AuthIcon from './auth/NavbarAuthIcon';
 
 export default function Navbar() {
     const [windowSize, setWindowSize] = useState({
@@ -40,6 +41,8 @@ function DesktopNavbar() {
                 src="/logo-ppsn.png"
                 alt="Logo PPSN"
                 fill
+                priority={true}
+                sizes="(min-width: 60em) 24vw, (min-width: 28em) 45vw"  
             />
         </Link>
         <div>
@@ -62,6 +65,7 @@ function DesktopNavbar() {
                     </details>
                 </li>
                 <li><Link href="hubungi-kami/"> Hubungi Kami </Link></li>
+                <li> <AuthIcon /> </li>
             </ul>
         </div>
     </div>
@@ -76,6 +80,8 @@ function MobileNavbar() {
                 src="/logo-ppsn.png"
                 alt="Logo PPSN"
                 fill
+                priority={true}
+                sizes="(min-width: 60em) 24vw, (min-width: 28em) 45vw"
             />
         </Link>
         <div>

@@ -16,6 +16,8 @@ export default function NewsBox(news: NewsBoxProps) {
                     src={news.picture}
                     alt={news.headline}
                     fill
+                    sizes="(min-width: 60em) 24vw, (min-width: 28em) 45vw"
+                    quality={75}
                 />
 
                 <div className="absolute bottom-0 left-0 right-0 h-[45%] bg-black opacity-70 p-2">

@@ -16,7 +16,9 @@ export default function Home() {
             <Image
               src="/logo-ppsn.png" 
               alt="logo-ppsn"
-              fill 
+              fill
+              priority={true}
+              sizes="(min-width: 60em) 24vw, (min-width: 28em) 45vw"
             />
           </figure>
           <div>

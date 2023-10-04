@@ -18,6 +18,8 @@ const Footer = ({}) => {
                     src="/logo-ppsn.png"
                     alt="Logo PPSN"
                     fill
+                    priority={true}
+                    sizes="(min-width: 60em) 24vw, (min-width: 28em) 45vw"
                 />
             </Link>
             <p className='mt-4'> 2021-2023 Perhimpunan Pelajar Sains Nasional </p>
